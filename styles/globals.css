@@ -59,8 +59,8 @@ header nav li + li {
 }
 
 .wrapper {
-  max-width: 1024px;
-  width: 90%;
+  max-width: 1200px;
+  width: 95%;
   margin: 0px auto;
 }
 
@@ -74,6 +74,15 @@ header nav li + li {
   flex: 1;
   background: url("../public/images/map.png") no-repeat center left fixed;
   background-size: cover;
+}
+
+.filters {
+  margin-top: 24px;
+}
+
+#__next .MuiInputBase-root {
+  background-color: white;
+  width: 250px;
 }
 
 @media screen and (max-width: 560px) {

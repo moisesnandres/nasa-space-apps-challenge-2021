@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Calendar from '../components/Calendar'
+import Search from '../components/Search'
 
 export default function Home() {
   return (
@@ -9,7 +11,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="map-container">
-        <div className="filters"></div>
+        <div className="filters wrapper">
+          <div className="country-search">
+            <Search />
+          </div>
+          <div className="date-search">
+            <Calendar />
+          </div>
+        </div>
       </div>
     </>
   )
