@@ -26,6 +26,17 @@ ul {
   box-sizing: border-box;
 }
 
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#__next main {
+  flex: 1;
+  display: flex;
+}
+
 header .wrapper {
   display: flex;
   align-items: center;
@@ -56,6 +67,13 @@ header nav li + li {
 .current-page-link {
   color: var(--active-blue);
   font-weight: bold;
+}
+
+.map-container {
+  position: relative;
+  flex: 1;
+  background: url("../public/images/map.png") no-repeat center left fixed;
+  background-size: cover;
 }
 
 @media screen and (max-width: 560px) {
