@@ -10,12 +10,13 @@ export default function Calendar() {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
-        label="MM/DD/YYYY"
+        label="Choose a date"
         value={value}
+        placeholder="MM/DD/YYYY"
         onChange={(newValue) => {
           setValue(newValue);
         }}
-        renderInput={(params) => <TextField {...params} />}
+        renderInput={(params) => <TextField {...params} variant="filled" />}
       />
     </LocalizationProvider>
   );

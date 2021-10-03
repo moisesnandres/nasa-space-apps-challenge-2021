@@ -78,6 +78,22 @@ header nav li + li {
 
 .filters {
   margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filters > div {
+  margin-top: 16px;
+}
+
+.zoom-magnifier {
+  display: flex;
+  align-items: center;
+}
+
+.zoom-magnifier span {
+  margin: 0px 8px;
 }
 
 #__next .MuiInputBase-root {

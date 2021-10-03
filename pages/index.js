@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Calendar from '../components/Calendar'
 import Search from '../components/Search'
+import Zoom from '../components/Zoom'
 
 export default function Home() {
   return (
@@ -18,8 +19,26 @@ export default function Home() {
           <div className="date-search">
             <Calendar />
           </div>
+          <Zoom />
         </div>
       </div>
+      <script dangerouslySetInnerHTML={{
+        __html: `
+          window.watsonAssistantChatOptions = {
+            integrationID: "2744d68e-84cf-471c-be6f-91317737d721", // The ID of this integration.
+            region: "us-south", // The region your integration is hosted in.
+            serviceInstanceID: "0d736a72-8196-427b-b678-2c723d72cdfa", // The ID of your service instance.
+            onLoad: function(instance) { instance.render(); }
+          };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+            (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+            "/WatsonAssistantChatEntry.js"
+          document.head.appendChild(t);
+        });
+        `
+      }}/>
     </>
   )
 }
