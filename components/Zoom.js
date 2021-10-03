@@ -7,12 +7,11 @@ export default function Zoom() {
 
   return (
     <div className="zoom-magnifier">
-      <button disabled={counter === 0} onClick={() => setCounter(counter - 1)}>
-        <ZoomOutIcon />
+      <button disabled={counter === 0} onClick={() => setCounter(counter - 1)} className="minus">
+        -
       </button>
-      <span>Zoom</span>
-      <button disabled={counter === 4} onClick={() => setCounter(counter + 1)}>
-        <ZoomInIcon />
+      <button disabled={counter === 4} onClick={() => setCounter(counter + 1)} className="plus">
+        +
       </button>
     </div>
   );

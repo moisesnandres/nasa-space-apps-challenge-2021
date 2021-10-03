@@ -76,24 +76,57 @@ header nav li + li {
   background-size: cover;
 }
 
-.filters {
+.dropdowns {
   margin-top: 24px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-}
-
-.filters > div {
-  margin-top: 16px;
 }
 
 .zoom-magnifier {
   display: flex;
   align-items: center;
+  background-color: white;
+  border-radius: 4px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
 }
 
-.zoom-magnifier span {
-  margin: 0px 8px;
+.zoom-magnifier button {
+  border: 1px solid transparent;
+  background-color: white;
+  font-size: 24px;
+  padding: 2px 12px;
+  width: 40px;
+  text-align: center;
+}
+
+.zoom-magnifier button:disabled {
+  background-color: #eee;
+}
+
+.zoom-magnifier .minus {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.zoom-magnifier .plus {
+  border-radius: 0px 4px 4px 0px;
+  border-left: 1px solid #ccc;
+}
+
+.range-container {
+  margin-top: 32px;
+}
+
+.range-container .MuiSlider-markLabel,
+.range-container .range-name {
+  color: white;
+}
+
+.range-name {
+  margin-top: 24px;
+  font-weight: bold;
+  width: 200px;
 }
 
 #__next .MuiInputBase-root {
@@ -118,5 +151,23 @@ header nav li + li {
 
   header nav ul {
     justify-content: center;
+  }
+
+  .zoom-magnifier {
+    left: 12px;
+    bottom: 24px;
+    right: auto;
+    top: auto;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .dropdowns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .date-search {
+    margin-top: 8px;
   }
 }

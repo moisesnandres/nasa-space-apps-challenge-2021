@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Calendar from '../components/Calendar'
 import Search from '../components/Search'
 import Zoom from '../components/Zoom'
+import RangeInput from '../components/RangeInput'
 
 export default function Home() {
   return (
@@ -12,15 +13,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="map-container">
-        <div className="filters wrapper">
+        <div className="dropdowns wrapper">
           <div className="country-search">
             <Search />
           </div>
           <div className="date-search">
             <Calendar />
           </div>
-          <Zoom />
         </div>
+        <RangeInput />
+        <Zoom />
       </div>
       <script dangerouslySetInnerHTML={{
         __html: `
