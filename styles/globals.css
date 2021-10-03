@@ -117,6 +117,8 @@ header nav li + li {
 
 .range-container {
   margin-top: 32px;
+  margin-left: 20px;
+  display: inline-block;
 }
 
 .range-container .MuiSlider-markLabel,
@@ -282,6 +284,46 @@ header nav li + li {
 
 .plastic-by-ocean {
   max-width: 300px;
+}
+
+.defris-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  background-color: white;
+}
+
+.defris-card > img {
+  width: 220px;
+}
+
+.defris-card .info {
+  padding: 16px 28px 16px 16px;
+}
+
+.defris-card h2 {
+  margin: 0px;
+  border-bottom: 1px solid #9FBDD3;
+  color: #0E4D7B;
+}
+
+.defris-card .close {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  border: none;
+  background-color: transparent;
+  color: #027EC6;
+}
+
+.defris-card .question {
+  color: #2D7DBF;
+}
+
+.defris-card .hashtag {
+  color: #027EC6;
 }
 
 @media screen and (max-width: 480px) {
