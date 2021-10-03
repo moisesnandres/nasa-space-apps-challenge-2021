@@ -137,21 +137,64 @@ header nav li + li {
 .statistic-container {
   background: #EDF7FF;
   padding: 20px 0px;
+  width: 100%;
 }
 
 .card {
   border: 1px solid transparent;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+  padding: 20px 32px;
+  background-color: white;
+  color: #0E4D7B;
+}
+
+.card h1, .card h2 {
+  margin: 0px;
+}
+
+.card h2 {
+  text-align: center;
+}
+
+.card p {
+  margin: 8px 0px 0px;
+}
+
+.card + .card {
+  margin-top: 24px;
+}
+
+.plastic-worldwide {
+  text-align: center;
+}
+
+.plastic-worldwide h2 {
+  margin-bottom: 12px;
+}
+
+.plastic-worldwide p {
+  color: #027EC6;
+}
+
+.plastic-worldwide .cta {
+  margin-top: 12px;
+  background: #0E4D7B;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  padding: 12px 20px;
+}
+
+.plastic-worldwide img {
+  width: 100%;
 }
 
 .info-card {
   background-color: rgba(14, 77, 123, 0.51);
   background-image: url("../public/images/ocean_background.png");
   background-size: cover;
-  padding: 20px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  align-items: flex-end;
 }
 
 .info-card h1 {
@@ -169,6 +212,48 @@ header nav li + li {
 .info-container {
   flex: 1;
   margin-right: 20px;
+}
+
+.plastic-waste h4 {
+  display: flex;
+}
+
+.plastic-waste li {
+  display: flex;
+  align-items: center;
+}
+
+.plastic-waste li + li {
+  margin-top: 12px;
+}
+
+.plastic-waste-info {
+  width: 24px;
+  height: 24px;
+  background: #0069A6;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.plastic-waste .country {
+  width: 120px;
+}
+
+.plastic-waste .bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.plastic-waste .bar div {
+  background-color: #0069A6;
+  height: 28px;
+  margin-right: 20px;
+  flex-shrink: 1;
+}
+
+.plastic-waste .bar p {
+  width: 110px;
 }
 
 @media screen and (max-width: 560px) {
