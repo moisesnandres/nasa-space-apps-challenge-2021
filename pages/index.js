@@ -1,46 +1,75 @@
+import Link from 'next/link'
 import Head from 'next/head'
-import Calendar from '../components/Calendar'
-import Search from '../components/Search'
-import Zoom from '../components/Zoom'
-import RangeInput from '../components/RangeInput'
+import Image from 'next/image'
+import { Pie } from 'react-chartjs-2';
+import { plasticWaste, plasticByOcean } from '../utils/fakeData'
 
-export default function Home() {
+export default function Statistics() {
   return (
-    <>
+    <div className="statistic-container">
       <Head>
         <title>Track the plastic</title>
         <meta name="description" content="Leveraging AI/ML for plastic marine debris" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="map-container">
-        <div className="dropdowns wrapper">
-          <div className="country-search">
-            <Search />
+
+      <div className="wrapper">
+        <div className="left-column">
+          <div className="card info-card">
+            <div className="info-container">
+              <h1>Welcome to Track the plastic!</h1>
+              <p>Our mission is to share information about marine plastic debris pollution in our ocean, in order to take action and save our planet.</p>
+            </div>
+            <Image src="/images/fish_logo.png" alt="Fish Logo" width={143} height={137} />
           </div>
-          <div className="date-search">
-            <Calendar />
+          <div className="card">
+            <h2>Countries that are polluting the oceans the most</h2>
+            <p>This is the annual metric of mismanaged plastic waste and the total ending up in global waters.</p>
+            <div className="charts">
+              <div className="plastic-waste">
+                <h4><div className="plastic-waste-info"></div>Mismanaged plastic waste</h4>
+                <ul>
+                  { plasticWaste.map((row, index) => (
+                    <li key={index}>
+                      <p className="country">{row.country}</p>
+                      <div className="bar">
+                        <div style={{ width: `${row.percentage * 2}px`}}></div>
+                        <p>{row.label} millions</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <h2>Plastic Debris Growth worldwide in the last 8 years</h2>
+            <div className="plastic-growth">
+              <Image src="/images/chart.png" alt="Chart" width={600} height={400} />
+            </div>
           </div>
         </div>
-        <RangeInput />
-        <Zoom />
+        <div className="right-column">
+          <div className="card plastic-worldwide">
+            <h2>Did you knew that 80% of the trash that you find in the ocean is plastic?</h2>
+            <Image src="/images/continents.png" alt="Continents" width={670} height={344} />
+            <p>Do you want to see the real time tracking?</p>
+            <Link href="/">
+              <a className="cta">See tracking</a>
+            </Link>
+          </div>
+          <div className="card">
+            <h2>Plastic Debris by Ocean</h2>
+            <div className="plastic-by-ocean">
+              <Pie
+                data={plasticByOcean}
+                width={200}
+                height={200}
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          window.watsonAssistantChatOptions = {
-            integrationID: "2744d68e-84cf-471c-be6f-91317737d721", // The ID of this integration.
-            region: "us-south", // The region your integration is hosted in.
-            serviceInstanceID: "0d736a72-8196-427b-b678-2c723d72cdfa", // The ID of your service instance.
-            onLoad: function(instance) { instance.render(); }
-          };
-        setTimeout(function(){
-          const t=document.createElement('script');
-          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
-            (window.watsonAssistantChatOptions.clientVersion || 'latest') +
-            "/WatsonAssistantChatEntry.js"
-          document.head.appendChild(t);
-        });
-        `
-      }}/>
-    </>
+    </div>
   )
 }

@@ -15,12 +15,12 @@ export default function Header() {
           <ul>
             <li>
               <ActiveLink href="/" activeClassName="current-page-link">
-                <a>Tracking</a>
+                <a>Statistics</a>
               </ActiveLink>
             </li>
             <li>
-              <ActiveLink href="/statistics" activeClassName="current-page-link">
-                <a>Statistics</a>
+              <ActiveLink href="/tracking" activeClassName="current-page-link">
+                <a>Tracking</a>
               </ActiveLink>
             </li>
           </ul>
