@@ -7,7 +7,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -132,6 +132,43 @@ header nav li + li {
 #__next .MuiInputBase-root {
   background-color: white;
   width: 250px;
+}
+
+.statistic-container {
+  background: #EDF7FF;
+  padding: 20px 0px;
+}
+
+.card {
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.info-card {
+  background-color: rgba(14, 77, 123, 0.51);
+  background-image: url("../public/images/ocean_background.png");
+  background-size: cover;
+  padding: 20px 32px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.info-card h1 {
+  font-size: 28px;
+  line-height: 38px;
+  color: #BCE1FF;
+}
+
+.info-card p {
+  font-size: 22px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.info-container {
+  flex: 1;
+  margin-right: 20px;
 }
 
 @media screen and (max-width: 560px) {
