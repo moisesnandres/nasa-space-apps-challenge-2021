@@ -23,11 +23,6 @@ export default function Header() {
                 <a>Statistics</a>
               </ActiveLink>
             </li>
-            <li>
-              <ActiveLink href="/contact" activeClassName="current-page-link">
-                <a>Contact</a>
-              </ActiveLink>
-            </li>
           </ul>
         </nav>
       </div>

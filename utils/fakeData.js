@@ -49,3 +49,24 @@ export const plasticGrowth = {
     }
   ]
 };
+
+export const plasticByOcean = {
+  labels: [
+    'High',
+    'Medium',
+    'Low'
+  ],
+  datasets: [{
+    data: [300, 120, 120],
+    backgroundColor: [
+    '#FF6384',
+    '#36A2EB',
+    '#FFCE56'
+    ],
+    hoverBackgroundColor: [
+    '#FF6384',
+    '#36A2EB',
+    '#FFCE56'
+    ]
+  }]
+};

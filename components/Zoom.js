@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import ZoomOutIcon from '@mui/icons-material/ZoomOut'
-import ZoomInIcon from '@mui/icons-material/ZoomIn'
 
 export default function Zoom() {
   const [counter, setCounter] = useState(0);

@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Line } from 'react-chartjs-2';
-import { plasticWaste, plasticGrowth } from '../utils/fakeData'
+import { Line, Pie } from 'react-chartjs-2';
+import { plasticWaste, plasticGrowth, plasticByOcean } from '../utils/fakeData'
 
 export default function Statistics() {
   return (
@@ -44,11 +44,13 @@ export default function Statistics() {
           </div>
           <div className="card">
             <h2>Plastic Debris Growth worldwide in the last 8 years</h2>
-            <Line
-              data={plasticGrowth}
-              width={200}
-              height={200}
-            />
+            <div className="plastic-growth">
+              <Line
+                data={plasticGrowth}
+                width={400}
+                height={300}
+              />
+            </div>
           </div>
         </div>
         <div className="right-column">
@@ -60,9 +62,15 @@ export default function Statistics() {
               <a className="cta">See tracking</a>
             </Link>
           </div>
-
           <div className="card">
             <h2>Plastic Debris by Ocean</h2>
+            <div className="plastic-by-ocean">
+              <Pie
+                data={plasticByOcean}
+                width={200}
+                height={200}
+              />
+            </div>
           </div>
         </div>
       </div>

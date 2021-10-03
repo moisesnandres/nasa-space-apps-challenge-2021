@@ -140,6 +140,19 @@ header nav li + li {
   width: 100%;
 }
 
+.statistic-container .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statistic-container .wrapper > div {
+  flex-basis: 48%;
+}
+
+.column-left {
+  margin-right: 20px;
+}
+
 .card {
   border: 1px solid transparent;
   border-radius: 20px;
@@ -195,6 +208,7 @@ header nav li + li {
   background-size: cover;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
+  align-items: flex-end;
 }
 
 .info-card h1 {
@@ -209,7 +223,12 @@ header nav li + li {
   color: #FFFFFF;
 }
 
+.left-columm {
+  margin-right: 24px;
+}
+
 .info-container {
+  align-self: stretch;
   flex: 1;
   margin-right: 20px;
 }
@@ -236,7 +255,7 @@ header nav li + li {
 }
 
 .plastic-waste .country {
-  width: 120px;
+  width: 100px;
 }
 
 .plastic-waste .bar {
@@ -254,6 +273,21 @@ header nav li + li {
 
 .plastic-waste .bar p {
   width: 110px;
+}
+
+.plastic-growth {
+  max-width: 300px;
+}
+
+.plastic-by-ocean {
+  max-width: 300px;
+}
+
+@media screen and (max-width: 480px) {
+  .plastic-waste li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media screen and (max-width: 560px) {
@@ -291,5 +325,16 @@ header nav li + li {
 
   .date-search {
     margin-top: 8px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .left-column {
+    margin-right: 0px;
+    margin-bottom: 24px;
+  }
+
+  .statistic-container .wrapper {
+    flex-direction: column;
   }
 }
