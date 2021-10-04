@@ -66,6 +66,7 @@ export default function Statistics() {
                 width={200}
                 height={200}
               />
+              <img src="/images/ocean_filter.png" alt="Ocean data" />
             </div>
           </div>
         </div>
