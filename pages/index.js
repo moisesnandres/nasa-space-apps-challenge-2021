@@ -73,18 +73,18 @@ export default function Statistics() {
       <script dangerouslySetInnerHTML={{
         __html: `
           window.watsonAssistantChatOptions = {
-            integrationID: "2744d68e-84cf-471c-be6f-91317737d721", // The ID of this integration.
+            integrationID: "0b33a950-e2c5-4d1c-bc7f-b50b4d43a69c", // The ID of this integration.
             region: "us-south", // The region your integration is hosted in.
-            serviceInstanceID: "0d736a72-8196-427b-b678-2c723d72cdfa", // The ID of your service instance.
+            serviceInstanceID: "1d223f9d-2a33-4f19-bd04-51b4d479cabc", // The ID of your service instance.
             onLoad: function(instance) { instance.render(); }
           };
-        setTimeout(function(){
-          const t=document.createElement('script');
-          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
-            (window.watsonAssistantChatOptions.clientVersion || 'latest') +
-            "/WatsonAssistantChatEntry.js"
-          document.head.appendChild(t);
-        });
+          setTimeout(function(){
+            const t=document.createElement('script');
+            t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+              (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+              "/WatsonAssistantChatEntry.js"
+            document.head.appendChild(t);
+          });
         `
       }}/>
     </div>
