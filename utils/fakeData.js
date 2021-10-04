@@ -60,13 +60,13 @@ export const plasticByOcean = {
     data: [300, 120, 120],
     backgroundColor: [
     '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
+    '#FFCE56',
+    '#36A2EB'
     ],
     hoverBackgroundColor: [
     '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
+    '#FFCE56',
+    '#36A2EB'
     ]
   }]
 };

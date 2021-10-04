@@ -404,13 +404,6 @@ header nav li + li {
     justify-content: center;
   }
 
-  .zoom-magnifier {
-    left: 12px;
-    bottom: 24px;
-    right: auto;
-    top: auto;
-  }
-
   .info-card img {
     width: 70px;
   }
@@ -439,6 +432,15 @@ header nav li + li {
 
   .debris-card .close {
     background-color: white;
+  }
+
+  .plastic-by-ocean {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .plastic-by-ocean img {
+    margin-bottom: 20px;
   }
 }
 
