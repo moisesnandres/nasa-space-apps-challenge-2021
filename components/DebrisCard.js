@@ -1,9 +1,9 @@
 import { TwitterShareButton, TwitterIcon } from "react-share";
 
-export default function DefrisCard({ closeModal }) {
+export default function DebrisCard({ closeModal }) {
   return (
-    <div className="defris-card">
-      <img src="/images/defris_card_detection.png" alt="Card image" />
+    <div className="debris-card">
+      <img src="/images/debris_card_detection.png" alt="Card image" />
       <div className="info">
         <button className="close" onClick={closeModal}>X</button>
         <h2>70% Marine plastic debris found</h2>

@@ -4,7 +4,7 @@ import Calendar from '../components/Calendar'
 import Search from '../components/Search'
 import Zoom from '../components/Zoom'
 import RangeInput from '../components/RangeInput'
-import DefrisCard from '../components/DefrisCard'
+import DebrisCard from '../components/DebrisCard'
 
 export default function Tracking() {
   const [showModal, setShowModal] = useState(false)
@@ -38,7 +38,7 @@ export default function Tracking() {
         <RangeInput />
         <Zoom />
         {
-          showModal && <DefrisCard closeModal={closeModal} />
+          showModal && <DebrisCard closeModal={closeModal} />
         }
       </div>
     </>

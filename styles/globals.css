@@ -286,7 +286,7 @@ header nav li + li {
   max-width: 300px;
 }
 
-.defris-card {
+.debris-card {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -296,21 +296,21 @@ header nav li + li {
   min-width: 560px;
 }
 
-.defris-card > img {
+.debris-card > img {
   width: 220px;
 }
 
-.defris-card .info {
+.debris-card .info {
   padding: 16px 28px 16px 16px;
 }
 
-.defris-card h2 {
+.debris-card h2 {
   margin: 0px;
   border-bottom: 1px solid #9FBDD3;
   color: #0E4D7B;
 }
 
-.defris-card .close {
+.debris-card .close {
   position: absolute;
   right: 4px;
   top: 4px;
@@ -319,11 +319,11 @@ header nav li + li {
   color: #027EC6;
 }
 
-.defris-card .question {
+.debris-card .question {
   color: #2D7DBF;
 }
 
-.defris-card .hashtag {
+.debris-card .hashtag {
   color: #027EC6;
 }
 
@@ -386,18 +386,18 @@ header nav li + li {
     line-height: 16px;
   }
 
-  .defris-card {
+  .debris-card {
     min-width: 300px;
     flex-direction: column;
   }
 
-  .defris-card img {
+  .debris-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
   }
 
-  .defris-card .close {
+  .debris-card .close {
     background-color: white;
   }
 }
