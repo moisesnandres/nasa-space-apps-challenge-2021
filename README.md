@@ -38,3 +38,49 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## ML
+
+### Introduction
+The trained model presented is a You Only Look Once (YOLO) version 4 object detector trained in the framework Darknet with 1673 images . These images where collected from the internet by scraping and from open source datasets like Open Images Dataset V6. 
+The model can multi-classify five categories: plastic, glass, metal, fishing gear and “other trash”, this final class detects different types of litter that aren’t part of the four categories mentioned before. 
+Due to time restrictions, the model was only trained for 3 hours. Despite this restriction, the model was able to detect and classify correctly in many scenarios, meaning that if we train it for more time it will increase its performance.
+
+![Demo](./public/images/readme_demo.gif)
+
+### General Results
+
+![General Results](./public/images/general_results.png)
+
+### Training
+To train the model, it is recommended to train it via colab from google. For the first configuration, you need to setup a directory in your drive with the dataset, the .cfg model and the .obj files. Additionally, inside this directory you need to create another directory called “backup”.
+You can find the weights for the model in this drive in the directory “backup”: https://drive.google.com/drive/folders/1D8XDir3DrATW8Av7zpv2n2L9W-Csk3LZ?usp=sharing 
+To start the training you will see that the Jupyter notebook provided has documented each step, so you will need to run from steps “Clonamos Darknet” to “5. Preparando detector”. In this last step just run the code up to the cell that says :
+
+```shell
+!./darknet detector train data/obj.data cfg/yolov4_custom.cfg yolov4.conv.137 -dont_show -map
+```
+
+Then run the next cell when the training ends to see the loss metric evolution of the model. Additionally, the weights that are being trained will be saved to your backup folder, so if the training is interrupted you can continue it by running the next cell:
+
+```shell
+!./darknet detector train data/obj.data cfg/yolov4_custom.cfg /mydrive/yolov4nasa/backup/yolov4_custom_last.weights -dont_show -map
+```
+
+Running the model
+To run and test the model you have to run all the cells up to the one for training. It is important to not run the cells that start with:
+```shell
+!./darknet detector train
+```
+
+So, you should skip this cells and continue to run the code from the cell that starts with:
+```shell
+# need to set our custom cfg to test mode 
+%cd cfg
+!sed -i 's/batch=64/batch=1/' yolov4_custom.cfg
+!sed -i 's/subdivisions=16/subdivisions=1/' yolov4_custom.cfg
+%cd ..
+```
+Now you will be able to test your model, just upload the images or videos you want to test the model with.
+With the command “!./darknet detector demo” you can test the model with a video, the “-thresh” parameter is the precision limit considered for the model to classify an object to a category or another. Furthermore, with the command “!./darknet detector test” you will be able to test the model with an image. Finally with “!./darknet detector map” you will be able to get all the metrics (mean Average Precision, mean seconds for each detection, Accuracy, Intersection Over Union, and Precision for each class) for the model, testing it through the validation set.
+

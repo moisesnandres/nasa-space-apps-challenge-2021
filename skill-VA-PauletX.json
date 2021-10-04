@@ -1,0 +1,356 @@
+{
+  "intents": [
+    {
+      "intent": "information",
+      "examples": [
+        {
+          "text": "Find information"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "map_tracking",
+      "examples": [
+        {
+          "text": "Map tracking"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "saludo",
+      "examples": [
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hi, How are you?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "start_tracking",
+      "examples": [
+        {
+          "text": "Start Tracking"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1633231336911",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Saludo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi, my name is Bubbles, My friends and I are stuck and we need your help"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "source": "https://video.faqp1-1.fna.fbcdn.net/v/t42.3356-2/244076935_4818087808224764_6968158480165068544_n.mp4/video-1633230909.mp4?_nc_cat=110&ccb=1-5&_nc_sid=060d78&_nc_ohc=OGlMsdEGuFUAX-ARqmu&tn=8QMb5LfqxLoYpZT8&vabr=176206&_nc_ht=video.faqp1-1.fna&oh=c7687100025c3799f7e6260ba1f1864c&oe=615A6F6F&dl=1",
+            "response_type": "video",
+            "channel_options": {
+              "chat": {
+                "dimensions": {}
+              }
+            }
+          },
+          {
+            "values": [
+              {
+                "text": "Did you know lots of microplastics particles eventually make their way into our waterways and damage our homes?"
+              },
+              {
+                "text": "My mates from Track de plastic are trying to help me by tracking the plastic pollution and you can join the cause too! "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "Here are some options of what you can do:",
+            "options": [
+              {
+                "label": "Start Tracking",
+                "value": {
+                  "input": {
+                    "text": "#start_tracking"
+                  }
+                }
+              },
+              {
+                "label": "Find information",
+                "value": {
+                  "input": {
+                    "text": "#information"
+                  }
+                }
+              },
+              {
+                "label": "Map tracking",
+                "value": {
+                  "input": {
+                    "text": "#map_tracking"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#saludo",
+      "dialog_node": "node_1_1633280609877",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Map tracking",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Check our tracking map"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#map_tracking",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1633231336911",
+      "previous_sibling": "node_4_1633231081259"
+    },
+    {
+      "type": "standard",
+      "title": "Start Tracking",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You can contribute with data. If you find plastic in your community upload the information by writing YES"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#start_tracking",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1633231081259",
+      "previous_sibling": "node_7_1633231334129"
+    },
+    {
+      "type": "standard",
+      "title": "Statistics by country",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "In Perú the level of pollution in the coast line is about 60% and the debris presented are: \n- Plastic\n- Paper\n- Glass"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1633278098981",
+      "context": {},
+      "conditions": "true",
+      "dialog_node": "node_4_1633231553218"
+    },
+    {
+      "type": "standard",
+      "title": "Find information",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Look for information about the plastic pollution in your area"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "context": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_8_1633278098981"
+      },
+      "conditions": "#information",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1633231334129",
+      "previous_sibling": "node_1_1633280609877"
+    },
+    {
+      "type": "standard",
+      "title": "Country",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "In which country do you live?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1633231334129",
+      "context": {},
+      "conditions": "true",
+      "dialog_node": "node_8_1633278098981"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi, my name is Bubbles, My friends and I are stuck and we need your help"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "source": "https://video.faqp1-1.fna.fbcdn.net/v/t42.3356-2/244076935_4818087808224764_6968158480165068544_n.mp4/video-1633230909.mp4?_nc_cat=110&ccb=1-5&_nc_sid=060d78&_nc_ohc=OGlMsdEGuFUAX-ARqmu&tn=8QMb5LfqxLoYpZT8&vabr=176206&_nc_ht=video.faqp1-1.fna&oh=c7687100025c3799f7e6260ba1f1864c&oe=615A6F6F&dl=1",
+            "response_type": "video",
+            "channel_options": {
+              "chat": {
+                "dimensions": {}
+              }
+            }
+          },
+          {
+            "values": [
+              {
+                "text": "Did you know lots of microplastics particles eventually make their way into our waterways and damage our homes?"
+              },
+              {
+                "text": "My mates from Track de plastic are trying to help me by tracking the plastic pollution and you can join the cause too! "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "Here are some options of what you can do:",
+            "options": [
+              {
+                "label": "Start Tracking",
+                "value": {
+                  "input": {
+                    "text": "#start_tracking"
+                  }
+                }
+              },
+              {
+                "label": "Find information",
+                "value": {
+                  "input": {
+                    "text": "#information"
+                  }
+                }
+              },
+              {
+                "label": "Map tracking",
+                "value": {
+                  "input": {
+                    "text": "#map_tracking"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "VA-PauletX",
+  "language": "en",
+  "description": ""
+}
