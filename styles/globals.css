@@ -293,6 +293,7 @@ header nav li + li {
   transform: translate(-50%,-50%);
   display: flex;
   background-color: white;
+  min-width: 560px;
 }
 
 .defris-card > img {
@@ -324,6 +325,17 @@ header nav li + li {
 
 .defris-card .hashtag {
   color: #027EC6;
+}
+
+.twitter-button button {
+  display: flex;
+  align-items: center;
+  background-color: #00aced !important;
+  color: white !important;
+  width: 90px;
+  justify-content: center;
+  border-radius: 4px;
+  padding-right: 8px !important;
 }
 
 @media screen and (max-width: 480px) {
@@ -372,6 +384,21 @@ header nav li + li {
   .info-card p {
     font-size: 12px;
     line-height: 16px;
+  }
+
+  .defris-card {
+    min-width: 300px;
+    flex-direction: column;
+  }
+
+  .defris-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .defris-card .close {
+    background-color: white;
   }
 }
 
