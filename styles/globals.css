@@ -72,7 +72,7 @@ header nav li + li {
 .map-container {
   position: relative;
   flex: 1;
-  background: url("../public/images/map.png") no-repeat center left fixed;
+  background: url("../public/images/selected_map.png") no-repeat center left fixed;
   background-size: cover;
   background-position: center center;
 }
